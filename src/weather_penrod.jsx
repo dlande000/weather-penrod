@@ -39,7 +39,7 @@ function Root() {
           <div className="slds-align_absolute-center">
             <ul className="slds-list_horizontal slds-has-block-links_space">
               <li>
-                <a href="http://davidanderson.nyc">Portfolio</a>
+                <a href="https://davidanderson.nyc">Portfolio</a>
               </li>
               <li>
                 <a href="https://www.linkedin.com/in/david-anderson-7bb543101/">LinkedIn</a>

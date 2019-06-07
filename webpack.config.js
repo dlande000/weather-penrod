@@ -2,7 +2,7 @@ const path = require('path');
 
 module.exports = {
   context: __dirname,
-  entry: './frontend/weather_penrod.jsx',
+  entry: './src/weather_penrod.jsx',
   output: {
     path: path.resolve(__dirname),
     filename: 'bundle.js'

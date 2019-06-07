@@ -81,355 +81,10 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./frontend/weather_penrod.jsx");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/weather_penrod.jsx");
 /******/ })
 /************************************************************************/
 /******/ ({
-
-/***/ "./frontend/forecast.jsx":
-/*!*******************************!*\
-  !*** ./frontend/forecast.jsx ***!
-  \*******************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Forecast; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var luxon__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! luxon */ "./node_modules/luxon/build/cjs-browser/luxon.js");
-/* harmony import */ var luxon__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(luxon__WEBPACK_IMPORTED_MODULE_1__);
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
-
-function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
-
-function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
-
-function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-
-
-
-var Forecast =
-/*#__PURE__*/
-function (_React$Component) {
-  _inherits(Forecast, _React$Component);
-
-  function Forecast(props) {
-    var _this;
-
-    _classCallCheck(this, Forecast);
-
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(Forecast).call(this, props));
-    _this.state = {
-      formattedDate: null
-    };
-    return _this;
-  }
-
-  _createClass(Forecast, [{
-    key: "timeStringToArray",
-    value: function timeStringToArray(time) {
-      var timeElements = [];
-      var checkingChars = [" ", "-", ":"];
-      var newTime = "";
-
-      for (var i = 0; timeElements.length < 5; i++) {
-        if (!checkingChars.includes(this.props.time[i])) {
-          newTime += this.props.time[i];
-        } else {
-          timeElements.push(parseInt(newTime));
-          newTime = "";
-        }
-      }
-
-      return timeElements;
-    }
-  }, {
-    key: "formatDateTime",
-    value: function formatDateTime() {
-      var dateArr = luxon__WEBPACK_IMPORTED_MODULE_1__["DateTime"].local.apply(luxon__WEBPACK_IMPORTED_MODULE_1__["DateTime"], _toConsumableArray(this.timeStringToArray(this.props.time))).toLocaleString(luxon__WEBPACK_IMPORTED_MODULE_1__["DateTime"].DATETIME_MED).split(' ');
-      var formattedDate = dateArr.slice(0, 2).concat(dateArr.slice(3)).join(' ');
-      this.setState({
-        formattedDate: formattedDate
-      });
-    }
-  }, {
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      this.formatDateTime();
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      if (this.state.formattedDate === null) return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null);
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "slds-col"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, this.state.formattedDate), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, this.props.fahrenheit, "\xB0 F"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        className: "icon-forecast",
-        src: this.props.icon,
-        alt: this.props.description
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, this.props.description));
-    }
-  }]);
-
-  return Forecast;
-}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
-
-
-
-/***/ }),
-
-/***/ "./frontend/weather.jsx":
-/*!******************************!*\
-  !*** ./frontend/weather.jsx ***!
-  \******************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Weather; });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _forecast__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./forecast */ "./frontend/forecast.jsx");
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-
-
-
-var Weather =
-/*#__PURE__*/
-function (_React$Component) {
-  _inherits(Weather, _React$Component);
-
-  function Weather(props) {
-    var _this;
-
-    _classCallCheck(this, Weather);
-
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(Weather).call(this, props));
-    _this.state = {
-      fahrenheit: 0,
-      celsius: 0,
-      weatherDescription: null,
-      icon: null,
-      humidity: 0,
-      high: 0,
-      low: 0,
-      windSpeed: 0,
-      cloudiness: 0,
-      forecasts: null
-    };
-    _this.capitalizeFirstLetter = _this.capitalizeFirstLetter.bind(_assertThisInitialized(_this));
-    return _this;
-  }
-
-  _createClass(Weather, [{
-    key: "fetchWeatherData",
-    value: function fetchWeatherData() {
-      var _this2 = this;
-
-      fetch("http://api.openweathermap.org/data/2.5/weather?q=".concat(this.props.location, "&appid=fba61597b693afd2b121ca0ad929d002&units=imperial")).then(function (result) {
-        return result.json();
-      }).then(function (result) {
-        _this2.setState({
-          fahrenheit: Math.round(result.main.temp),
-          celsius: Math.round((result.main.temp - 32) * 5 / 9),
-          weatherDescription: result.weather[0].description,
-          icon: "http://openweathermap.org/img/w/".concat(result.weather[0].icon, ".png"),
-          humidity: result.main.humidity,
-          low: Math.round(result.main.temp_min),
-          high: Math.round(result.main.temp_max),
-          windSpeed: Math.round(result.wind.speed),
-          cloudiness: result.clouds.all
-        });
-      });
-    }
-  }, {
-    key: "fetchForecasts",
-    value: function fetchForecasts() {
-      var _this3 = this;
-
-      fetch("http://api.openweathermap.org/data/2.5/forecast?q=".concat(this.props.location, "&appid=fba61597b693afd2b121ca0ad929d002&units=imperial")).then(function (result) {
-        return result.json();
-      }).then(function (result) {
-        var tenDayForecast = result.list.slice(0, 10);
-        var formattedForecasts = tenDayForecast.map(function (obj, i) {
-          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_forecast__WEBPACK_IMPORTED_MODULE_1__["default"], {
-            key: i,
-            time: obj.dt_txt,
-            fahrenheit: Math.round(obj.main.temp),
-            description: obj.weather[0].main,
-            icon: "http://openweathermap.org/img/w/".concat(obj.weather[0].icon, ".png")
-          });
-        });
-
-        _this3.setState({
-          forecasts: formattedForecasts
-        });
-      });
-    }
-  }, {
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      this.fetchWeatherData();
-      this.fetchForecasts();
-    }
-  }, {
-    key: "capitalizeFirstLetter",
-    value: function capitalizeFirstLetter(str) {
-      if (str !== null) return str[0].toUpperCase().concat(str.slice(1));
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      if (this.state.forecasts === null) return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null);
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "slds-card slds-p-around_small"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        id: this.props.location
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "white-opaque-background slds-p-around_small"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "slds-grid"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "slds-col"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-        className: "slds-list_horizontal slds-has-block-links_space"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, this.capitalizeFirstLetter(this.props.location))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        className: "slds-col icon-weather",
-        src: this.state.icon,
-        alt: "weather icon"
-      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "slds-grid"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
-        className: "slds-col slds-size_3-of-12 slds-p-right_xsmall"
-      }, this.state.fahrenheit, "\xB0 F"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", {
-        className: "slds-col"
-      }, "(", this.state.celsius, "\xB0 C)"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "slds-col slds-text-align_right"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, this.capitalizeFirstLetter(this.state.weatherDescription)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "Low: ", this.state.low, "\xB0 F; High: ", this.state.high, "\xB0 F"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, this.state.cloudiness, "% cloudy with wind speeds of ", this.state.windSpeed, " mph."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, this.state.humidity, "% humidity"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "slds-p-top_large slds-p-bottom_small"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "Forecast")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "slds-grid slds-gutters"
-      }, this.state.forecasts))));
-    }
-  }]);
-
-  return Weather;
-}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
-
-
-
-/***/ }),
-
-/***/ "./frontend/weather_penrod.jsx":
-/*!*************************************!*\
-  !*** ./frontend/weather_penrod.jsx ***!
-  \*************************************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
-/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _weather__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./weather */ "./frontend/weather.jsx");
-/* harmony import */ var luxon__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! luxon */ "./node_modules/luxon/build/cjs-browser/luxon.js");
-/* harmony import */ var luxon__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(luxon__WEBPACK_IMPORTED_MODULE_3__);
-
-
-
-
-var locations = ['milwaukee', 'minneapolis', 'chicago', 'dallas'];
-var date = luxon__WEBPACK_IMPORTED_MODULE_3__["DateTime"].local().toLocaleString(luxon__WEBPACK_IMPORTED_MODULE_3__["DateTime"].DATETIME_HUGE);
-
-function formatWeather(locations) {
-  var formattedWeather = locations.map(function (location, i) {
-    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_weather__WEBPACK_IMPORTED_MODULE_2__["default"], {
-      location: location,
-      key: location
-    });
-  });
-  return formattedWeather;
-}
-
-function Root() {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "full-app"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "slds-p-top_x-large slds-p-bottom_large slds-grid"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "slds-col"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
-    className: "slds-text-heading--large"
-  }, "PENROD WEATHER")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "slds-col slds-text-align_right"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "A weather app for the fine folks at ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    href: "https://penrod.co"
-  }, "Penrod"), "."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Updated at ", date, "."))), formatWeather(locations), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("footer", {
-    className: "slds-p-top_x-large slds-p-bottom_large"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "slds-align_absolute-center"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "slds-p-right_x-large"
-  }, "Made by David Anderson for Penrod.", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Weather data provided by OpenWeatherMap."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-    className: "slds-list_horizontal slds-has-block-links_space"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    href: "https://http://davidanderson.nyc"
-  }, "Portfolio")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    href: "https://www.linkedin.com/in/david-anderson-7bb543101/"
-  }, "LinkedIn")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    href: "http://github.com/dlande000"
-  }, "GitHub")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-    href: "mailto:dlande000@gmail.com"
-  }, "Email"))))));
-}
-
-document.addEventListener("DOMContentLoaded", function () {
-  var root = document.getElementById("root");
-  react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Root, null), root);
-});
-
-/***/ }),
 
 /***/ "./node_modules/luxon/build/cjs-browser/luxon.js":
 /*!*******************************************************!*\
@@ -33158,6 +32813,351 @@ try {
 
 module.exports = g;
 
+
+/***/ }),
+
+/***/ "./src/forecast.jsx":
+/*!**************************!*\
+  !*** ./src/forecast.jsx ***!
+  \**************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Forecast; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var luxon__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! luxon */ "./node_modules/luxon/build/cjs-browser/luxon.js");
+/* harmony import */ var luxon__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(luxon__WEBPACK_IMPORTED_MODULE_1__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
+
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance"); }
+
+function _iterableToArray(iter) { if (Symbol.iterator in Object(iter) || Object.prototype.toString.call(iter) === "[object Arguments]") return Array.from(iter); }
+
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = new Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+var Forecast =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(Forecast, _React$Component);
+
+  function Forecast(props) {
+    var _this;
+
+    _classCallCheck(this, Forecast);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Forecast).call(this, props));
+    _this.state = {
+      formattedDate: null
+    };
+    return _this;
+  }
+
+  _createClass(Forecast, [{
+    key: "timeStringToArray",
+    value: function timeStringToArray(time) {
+      var timeElements = [];
+      var checkingChars = [" ", "-", ":"];
+      var newTime = "";
+
+      for (var i = 0; timeElements.length < 5; i++) {
+        if (!checkingChars.includes(this.props.time[i])) {
+          newTime += this.props.time[i];
+        } else {
+          timeElements.push(parseInt(newTime));
+          newTime = "";
+        }
+      }
+
+      return timeElements;
+    }
+  }, {
+    key: "formatDateTime",
+    value: function formatDateTime() {
+      var dateArr = luxon__WEBPACK_IMPORTED_MODULE_1__["DateTime"].local.apply(luxon__WEBPACK_IMPORTED_MODULE_1__["DateTime"], _toConsumableArray(this.timeStringToArray(this.props.time))).toLocaleString(luxon__WEBPACK_IMPORTED_MODULE_1__["DateTime"].DATETIME_MED).split(' ');
+      var formattedDate = dateArr.slice(0, 2).concat(dateArr.slice(3)).join(' ');
+      this.setState({
+        formattedDate: formattedDate
+      });
+    }
+  }, {
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.formatDateTime();
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      if (this.state.formattedDate === null) return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null);
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "slds-col"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, this.state.formattedDate), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, this.props.fahrenheit, "\xB0 F"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        className: "icon-forecast",
+        src: this.props.icon,
+        alt: this.props.description
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, this.props.description));
+    }
+  }]);
+
+  return Forecast;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+
+
+/***/ }),
+
+/***/ "./src/weather.jsx":
+/*!*************************!*\
+  !*** ./src/weather.jsx ***!
+  \*************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return Weather; });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _forecast__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./forecast */ "./src/forecast.jsx");
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+var Weather =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(Weather, _React$Component);
+
+  function Weather(props) {
+    var _this;
+
+    _classCallCheck(this, Weather);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(Weather).call(this, props));
+    _this.state = {
+      fahrenheit: 0,
+      celsius: 0,
+      weatherDescription: null,
+      icon: null,
+      humidity: 0,
+      high: 0,
+      low: 0,
+      windSpeed: 0,
+      cloudiness: 0,
+      forecasts: null
+    };
+    _this.capitalizeFirstLetter = _this.capitalizeFirstLetter.bind(_assertThisInitialized(_this));
+    return _this;
+  }
+
+  _createClass(Weather, [{
+    key: "fetchWeatherData",
+    value: function fetchWeatherData() {
+      var _this2 = this;
+
+      fetch("http://api.openweathermap.org/data/2.5/weather?q=".concat(this.props.location, "&appid=fba61597b693afd2b121ca0ad929d002&units=imperial")).then(function (result) {
+        return result.json();
+      }).then(function (result) {
+        _this2.setState({
+          fahrenheit: Math.round(result.main.temp),
+          celsius: Math.round((result.main.temp - 32) * 5 / 9),
+          weatherDescription: result.weather[0].description,
+          icon: "http://openweathermap.org/img/w/".concat(result.weather[0].icon, ".png"),
+          humidity: result.main.humidity,
+          low: Math.round(result.main.temp_min),
+          high: Math.round(result.main.temp_max),
+          windSpeed: Math.round(result.wind.speed),
+          cloudiness: result.clouds.all
+        });
+      });
+    }
+  }, {
+    key: "fetchForecasts",
+    value: function fetchForecasts() {
+      var _this3 = this;
+
+      fetch("http://api.openweathermap.org/data/2.5/forecast?q=".concat(this.props.location, "&appid=fba61597b693afd2b121ca0ad929d002&units=imperial")).then(function (result) {
+        return result.json();
+      }).then(function (result) {
+        var tenDayForecast = result.list.slice(0, 10);
+        var formattedForecasts = tenDayForecast.map(function (obj, i) {
+          return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_forecast__WEBPACK_IMPORTED_MODULE_1__["default"], {
+            key: i,
+            time: obj.dt_txt,
+            fahrenheit: Math.round(obj.main.temp),
+            description: obj.weather[0].main,
+            icon: "http://openweathermap.org/img/w/".concat(obj.weather[0].icon, ".png")
+          });
+        });
+
+        _this3.setState({
+          forecasts: formattedForecasts
+        });
+      });
+    }
+  }, {
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.fetchWeatherData();
+      this.fetchForecasts();
+    }
+  }, {
+    key: "capitalizeFirstLetter",
+    value: function capitalizeFirstLetter(str) {
+      if (str !== null) return str[0].toUpperCase().concat(str.slice(1));
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      if (this.state.forecasts === null) return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null);
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "slds-card slds-p-around_small"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        id: this.props.location
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "white-opaque-background slds-p-around_small"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "slds-grid"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "slds-col"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "slds-list_horizontal slds-has-block-links_space"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", null, this.capitalizeFirstLetter(this.props.location))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        className: "slds-col icon-weather",
+        src: this.state.icon,
+        alt: "weather icon"
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "slds-grid"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
+        className: "slds-col slds-size_3-of-12 slds-p-right_xsmall"
+      }, this.state.fahrenheit, "\xB0 F"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h5", {
+        className: "slds-col"
+      }, "(", this.state.celsius, "\xB0 C)"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "slds-col slds-text-align_right"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, this.capitalizeFirstLetter(this.state.weatherDescription)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "Low: ", this.state.low, "\xB0 F; High: ", this.state.high, "\xB0 F"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, this.state.cloudiness, "% cloudy with wind speeds of ", this.state.windSpeed, " mph."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, this.state.humidity, "% humidity"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "slds-p-top_large slds-p-bottom_small"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "Forecast")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "slds-grid slds-gutters"
+      }, this.state.forecasts))));
+    }
+  }]);
+
+  return Weather;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+
+
+/***/ }),
+
+/***/ "./src/weather_penrod.jsx":
+/*!********************************!*\
+  !*** ./src/weather_penrod.jsx ***!
+  \********************************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _weather__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./weather */ "./src/weather.jsx");
+/* harmony import */ var luxon__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! luxon */ "./node_modules/luxon/build/cjs-browser/luxon.js");
+/* harmony import */ var luxon__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(luxon__WEBPACK_IMPORTED_MODULE_3__);
+
+
+
+
+var locations = ['milwaukee', 'minneapolis', 'chicago', 'dallas'];
+var date = luxon__WEBPACK_IMPORTED_MODULE_3__["DateTime"].local().toLocaleString(luxon__WEBPACK_IMPORTED_MODULE_3__["DateTime"].DATETIME_HUGE);
+
+function formatWeather(locations) {
+  var formattedWeather = locations.map(function (location, i) {
+    return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_weather__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      location: location,
+      key: location
+    });
+  });
+  return formattedWeather;
+}
+
+function Root() {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "full-app"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "slds-p-top_x-large slds-p-bottom_large slds-grid"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "slds-col"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+    className: "slds-text-heading--large"
+  }, "PENROD WEATHER")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "slds-col slds-text-align_right"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "A weather app for the fine folks at ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "https://penrod.co"
+  }, "Penrod"), "."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Updated at ", date, "."))), formatWeather(locations), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("footer", {
+    className: "slds-p-top_x-large slds-p-bottom_large"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "slds-align_absolute-center"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "slds-p-right_x-large"
+  }, "Made by David Anderson for Penrod.", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Weather data provided by OpenWeatherMap."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+    className: "slds-list_horizontal slds-has-block-links_space"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "https://http://davidanderson.nyc"
+  }, "Portfolio")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "https://www.linkedin.com/in/david-anderson-7bb543101/"
+  }, "LinkedIn")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "https://github.com/dlande000/weather-penrod"
+  }, "GitHub")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+    href: "mailto:dlande000@gmail.com"
+  }, "Email"))))));
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  var root = document.getElementById("root");
+  react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(Root, null), root);
+});
 
 /***/ })
 

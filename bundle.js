@@ -33138,13 +33138,9 @@ function Root() {
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "A weather app for the fine folks at ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     href: "https://penrod.co"
   }, "Penrod"), "."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Updated at ", date, "."))), formatWeather(locations), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("footer", {
-    className: "slds-p-top_x-large slds-p-bottom_large"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "slds-align_absolute-center"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "slds-p-right_x-large"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("b", null, "Not seeing the weather? This may be a browser issue. OpenWeatherMap, which provides the weather data, only allows HTTP requests. Please check your broswer and allow it to load all scripts for this page."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-    className: "slds-list_horizontal slds-has-block-links_space"
+    className: "slds-p-top_xx-large slds-p-bottom_large slds-align_absolute-center"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+    className: "slds-list_horizontal slds-has-block-links_space slds-align_absolute-center"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     href: "https://http://davidanderson.nyc"
   }, "Portfolio")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
@@ -33153,7 +33149,9 @@ function Root() {
     href: "https://github.com/dlande000/weather-penrod"
   }, "GitHub")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     href: "mailto:dlande000@gmail.com"
-  }, "Email")))))));
+  }, "Email")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "slds-text-align_center"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Built by David Anderson for Penrod."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Weather data provided by OpenWeatherMap."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "CSS style provided by Salesforce Lightning Design System."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("b", null, "Not seeing the weather? This may be a browser issue. OpenWeatherMap, which provides the weather data, only allows HTTP requests. Please check your broswer and allow it to load all scripts for this page."))))));
 }
 
 document.addEventListener("DOMContentLoaded", function () {

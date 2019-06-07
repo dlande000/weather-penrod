@@ -30,7 +30,7 @@ function Root() {
             <h1 className="slds-text-heading--large">PENROD WEATHER</h1>
           </div>
           <div className="slds-col slds-text-align_right">
-            <p>A weather app for the fine folks at <a href="https://penrod.co">Penrod</a>.</p>
+            <p>A weather app for the fine folks at Penrod.</p>
             <p>Updated at {date}.</p>
           </div>
         </div>

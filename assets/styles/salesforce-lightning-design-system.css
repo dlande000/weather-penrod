@@ -38,10 +38,6 @@ li > h2 {
   top: 12px;
 }
 
-.https-issue > p ~ p {
-  display: hidden;
-}
-
 #milwaukee {
   background-image: url('../images/milwaukee.jpg');
 }

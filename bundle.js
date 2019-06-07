@@ -33141,7 +33141,7 @@ function Root() {
     className: "slds-align_absolute-center"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "slds-p-right_x-large"
-  }, "Made by David Anderson for Penrod.", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Weather data provided by OpenWeatherMap."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("b", null, "Not seeing the weather? This may be a browser issue. OpenWeatherMap, which provides the weather data, only allows HTTP requests. Please check your broswer and allow it to load all scripts for this page."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
     className: "slds-list_horizontal slds-has-block-links_space"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     href: "https://http://davidanderson.nyc"

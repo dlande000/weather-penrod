@@ -37,8 +37,7 @@ function Root() {
       <footer className="slds-p-top_x-large slds-p-bottom_large">
         <div className="slds-align_absolute-center">
           <div className="slds-p-right_x-large">
-            Made by David Anderson for Penrod.<br/>
-            Weather data provided by OpenWeatherMap.
+            <b>Not seeing the weather? This may be a browser issue. OpenWeatherMap, which provides the weather data, only allows HTTP requests. Please check your broswer and allow it to load all scripts for this page.</b><br/><br/>
           </div>
           <ul className="slds-list_horizontal slds-has-block-links_space">
             <li>

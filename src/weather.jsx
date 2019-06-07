@@ -62,12 +62,7 @@ export default class Weather extends React.Component {
   }
 
   render() {
-    if (this.state.forecasts === null) {
-      return(
-        <div className="https-issue">
-          <p>Not seeing any weather? This may be an HTTPS issue. OpenWeatherMap, which provides the weather data, uses HTTP, while your browser may be using HTTPS. If you see an icon in your browser's navigation bar, click it to use HTTP for this page.</p>
-        </div>
-      )};
+    if (this.state.forecasts === null) return(<div></div>);
 
     return(
       <div className="slds-card slds-p-around_small">

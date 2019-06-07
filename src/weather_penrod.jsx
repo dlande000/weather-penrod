@@ -35,10 +35,9 @@ function Root() {
           </div>
         </div>
         {formatWeather(locations)}
-        <footer className="slds-p-top_xx-large slds-p-bottom_large slds-align_absolute-center">
-          <div>
-            <div>
-            <ul className="slds-list_horizontal slds-has-block-links_space slds-align_absolute-center">
+        <footer className="slds-p-top_xx-large slds-p-bottom_large">
+          <div className="slds-align_absolute-center">
+            <ul className="slds-list_horizontal slds-has-block-links_space">
               <li>
                 <a href="https://http://davidanderson.nyc">Portfolio</a>
               </li>
@@ -52,13 +51,12 @@ function Root() {
                 <a href="mailto:dlande000@gmail.com">Email</a>
               </li>
             </ul>
-            </div>
-            <div className="slds-text-align_center">
-              <p>Built by David Anderson for Penrod.</p>
-              <p>Weather data provided by OpenWeatherMap.</p>
-              <p>CSS style provided by Salesforce Lightning Design System.</p><br/>
-              <b>Not seeing the weather? This may be a browser issue. OpenWeatherMap, which provides the weather data, only allows HTTP requests. Please check your broswer and allow it to load all scripts for this page.</b>
-            </div>
+          </div>
+          <div className="slds-text-align_center">
+            <p>Built by David Anderson for Penrod.</p>
+            <p>Weather data provided by OpenWeatherMap.</p>
+            <p>CSS style provided by Salesforce Lightning Design System.</p><br/>
+            <b>Not seeing the weather? This may be a browser issue. OpenWeatherMap, which provides the weather data, only allows HTTP requests. Please check your broswer and allow it to load all scripts for this page.</b>
           </div>
         </footer>
       </div>

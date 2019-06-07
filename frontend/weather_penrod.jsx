@@ -3,11 +3,11 @@ import ReactDOM from 'react-dom';
 import Weather from './weather';
 import { DateTime } from 'luxon';
 
-let locations = [
-  'Milwaukee',
-  'Minneapolis',
-  'Chicago',
-  'Dallas'
+const locations = [
+  'milwaukee',
+  'minneapolis',
+  'chicago',
+  'dallas'
 ];
 
 let date = DateTime.local().toLocaleString(DateTime.DATETIME_HUGE);
@@ -15,7 +15,7 @@ let date = DateTime.local().toLocaleString(DateTime.DATETIME_HUGE);
 function formatWeather(locations) {
   let formattedWeather = locations.map((location, i) => {
     return(
-      <Weather location={location} key={i}/>
+      <Weather location={location} key={location}/>
     )
   });
   return formattedWeather;
@@ -23,18 +23,30 @@ function formatWeather(locations) {
 
 function Root() {
   return(
-    <div>
-      <h1>Penrod Weather</h1>
-      <p>A weather app for the fine folks at <a href="https://penrod.co">Penrod</a>.</p>
-      <p>Checked on {date}.</p>
+    <div className="full-app">
+      <div className="slds-p-top_x-large slds-p-bottom_large slds-grid">
+        <div className="slds-col">
+          <h1 className="slds-text-heading--large">PENROD WEATHER</h1>
+        </div>
+        <div className="slds-col slds-text-align_right">
+          <p>A weather app for the fine folks at <a href="https://penrod.co">Penrod</a>.</p>
+          <p>Updated at {date}.</p>
+        </div>
+      </div>
       {formatWeather(locations)}
-      <footer>
-        Made by David Anderson for Penrod. Weather data provided by <a href="https://openweathermap.org/">OpenWeatherMap</a>.
-        <nav>
-          <a href="https://http://davidanderson.nyc">Portfolio</a>
-          <a href="https://www.linkedin.com/in/david-anderson-7bb543101/">LinkedIn</a>
-          <a href="http://github.com/dlande000">Github</a>
-        </nav>
+      <footer className="slds-p-top_x-large slds-p-bottom_large">
+        <div className="slds-align_absolute-center">
+          <div className="slds-p-right_x-large">
+            Made by David Anderson for Penrod.<br/>
+            Weather data provided by OpenWeatherMap.
+          </div>
+          <ul className="slds-list_horizontal slds-has-block-links_space">
+            <li><a href="https://http://davidanderson.nyc">Portfolio</a></li>
+            <li><a href="https://www.linkedin.com/in/david-anderson-7bb543101/">LinkedIn</a></li>
+            <li><a href="http://github.com/dlande000">GitHub</a></li>
+            <li><a href="mailto:dlande000@gmail.com">Email</a></li>
+          </ul>
+        </div>
       </footer>
     </div>
   )

@@ -36,11 +36,12 @@ export default class Forecast extends React.Component {
   }
 
   render() {
+    if (this.state.formattedDate === null) return (<div></div>);
     return(
-      <div>
+      <div className="slds-col">
         <p>{this.state.formattedDate}</p>
         <p>{this.props.fahrenheit}&#176; F</p>
-        <img src={this.props.icon} alt=""/>
+        <img className="icon-forecast" src={this.props.icon} alt={this.props.description} />
         <p>{this.props.description}</p>
       </div>
     )

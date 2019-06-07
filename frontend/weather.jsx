@@ -62,19 +62,35 @@ export default class Weather extends React.Component {
   }
 
   render() {
+    if (this.state.forecasts === null) return (<div></div>);
     return(
-      <div>
-        <h2>{this.props.location}</h2>
-        <h3>{this.state.fahrenheit}&#176; F</h3>
-        <h3>({this.state.celsius}&#176; C)</h3>
-        <h3>{this.state.humidity}% humidity</h3>
-        <h4>Low: {this.state.low}&#176; F; High: {this.state.high}&#176; F</h4>
-        <h4>{this.capitalizeFirstLetter(this.state.weatherDescription)}</h4>
-        <h4>{this.state.cloudiness}% cloudy with wind speeds at {this.state.windSpeed} mph.</h4>
-        <img src={this.state.icon} alt=""/>
-        <div>
-          <h4>Forecast:</h4>
+      <div className="slds-card slds-p-around_small">
+        <div id={this.props.location} >
+          <div className="white-opaque-background slds-p-around_small">
+        <div className="slds-grid">
+          <div className="slds-col">
+          <ul className="slds-list_horizontal slds-has-block-links_space">
+            <li><h2>{this.capitalizeFirstLetter(this.props.location)}</h2></li>
+          <li><img className="slds-col icon-weather" src={this.state.icon} alt="weather icon"/></li>
+          </ul>
+            <div className="slds-grid">
+            <h3 className="slds-col slds-size_3-of-12 slds-p-right_xsmall">{this.state.fahrenheit}&#176; F</h3>
+            <h5 className="slds-col">({this.state.celsius}&#176; C)</h5>
+            </div>
+          </div>
+          <div className="slds-col slds-text-align_right">
+            <h3>{this.capitalizeFirstLetter(this.state.weatherDescription)}</h3>
+            <h4>Low: {this.state.low}&#176; F; High: {this.state.high}&#176; F</h4>
+            <h4>{this.state.cloudiness}% cloudy with wind speeds of {this.state.windSpeed} mph.</h4>
+            <h4>{this.state.humidity}% humidity</h4>
+          </div>
+        </div>
+        <div className="slds-p-top_large slds-p-bottom_small">
+          <h4>Forecast</h4></div>
+        <div className="slds-grid slds-gutters">
           {this.state.forecasts}
+        </div>
+        </div>
         </div>
       </div>
     )

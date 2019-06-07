@@ -33077,7 +33077,7 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, this.capitalizeFirstLetter(this.state.weatherDescription)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "Low: ", this.state.low, "\xB0 F; High: ", this.state.high, "\xB0 F"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, this.state.cloudiness, "% cloudy with wind speeds of ", this.state.windSpeed, " mph."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, this.state.humidity, "% humidity"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "slds-p-top_large slds-p-bottom_small"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h4", null, "Forecast")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "slds-grid slds-gutters forecasts"
+        className: "slds-grid slds-gutters"
       }, this.state.forecasts))));
     }
   }]);
@@ -33124,6 +33124,8 @@ function formatWeather(locations) {
 
 function Root() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "slds-brand-band slds-brand-band_medium"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "full-app"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     className: "slds-p-top_x-large slds-p-bottom_large slds-grid"
@@ -33151,7 +33153,7 @@ function Root() {
     href: "https://github.com/dlande000/weather-penrod"
   }, "GitHub")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     href: "mailto:dlande000@gmail.com"
-  }, "Email"))))));
+  }, "Email")))))));
 }
 
 document.addEventListener("DOMContentLoaded", function () {

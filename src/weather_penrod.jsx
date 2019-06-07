@@ -23,38 +23,40 @@ function formatWeather(locations) {
 
 function Root() {
   return(
-    <div className="full-app">
-      <div className="slds-p-top_x-large slds-p-bottom_large slds-grid">
-        <div className="slds-col">
-          <h1 className="slds-text-heading--large">PENROD WEATHER</h1>
-        </div>
-        <div className="slds-col slds-text-align_right">
-          <p>A weather app for the fine folks at <a href="https://penrod.co">Penrod</a>.</p>
-          <p>Updated at {date}.</p>
-        </div>
-      </div>
-      {formatWeather(locations)}
-      <footer className="slds-p-top_x-large slds-p-bottom_large">
-        <div className="slds-align_absolute-center">
-          <div className="slds-p-right_x-large">
-            <b>Not seeing the weather? This may be a browser issue. OpenWeatherMap, which provides the weather data, only allows HTTP requests. Please check your broswer and allow it to load all scripts for this page.</b><br/><br/>
+    <div className="slds-brand-band slds-brand-band_medium">
+      <div className="full-app">
+        <div className="slds-p-top_x-large slds-p-bottom_large slds-grid">
+          <div className="slds-col">
+            <h1 className="slds-text-heading--large">PENROD WEATHER</h1>
           </div>
-          <ul className="slds-list_horizontal slds-has-block-links_space">
-            <li>
-              <a href="https://http://davidanderson.nyc">Portfolio</a>
-            </li>
-            <li>
-              <a href="https://www.linkedin.com/in/david-anderson-7bb543101/">LinkedIn</a>
-            </li>
-            <li>
-              <a href="https://github.com/dlande000/weather-penrod">GitHub</a>
-            </li>
-            <li>
-              <a href="mailto:dlande000@gmail.com">Email</a>
-            </li>
-          </ul>
+          <div className="slds-col slds-text-align_right">
+            <p>A weather app for the fine folks at <a href="https://penrod.co">Penrod</a>.</p>
+            <p>Updated at {date}.</p>
+          </div>
         </div>
-      </footer>
+        {formatWeather(locations)}
+        <footer className="slds-p-top_x-large slds-p-bottom_large">
+          <div className="slds-align_absolute-center">
+            <div className="slds-p-right_x-large">
+              <b>Not seeing the weather? This may be a browser issue. OpenWeatherMap, which provides the weather data, only allows HTTP requests. Please check your broswer and allow it to load all scripts for this page.</b><br/><br/>
+            </div>
+            <ul className="slds-list_horizontal slds-has-block-links_space">
+              <li>
+                <a href="https://http://davidanderson.nyc">Portfolio</a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/in/david-anderson-7bb543101/">LinkedIn</a>
+              </li>
+              <li>
+                <a href="https://github.com/dlande000/weather-penrod">GitHub</a>
+              </li>
+              <li>
+                <a href="mailto:dlande000@gmail.com">Email</a>
+              </li>
+            </ul>
+          </div>
+        </footer>
+      </div>
     </div>
   )
 }

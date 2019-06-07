@@ -92,7 +92,7 @@ export default class Weather extends React.Component {
             <div className="slds-p-top_large slds-p-bottom_small">
               <h4>Forecast</h4>
             </div>
-            <div className="slds-grid slds-gutters">
+            <div className="slds-grid slds-gutters forecasts">
               {this.state.forecasts}
             </div>
           </div>

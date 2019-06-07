@@ -41,10 +41,18 @@ function Root() {
             Weather data provided by OpenWeatherMap.
           </div>
           <ul className="slds-list_horizontal slds-has-block-links_space">
-            <li><a href="https://http://davidanderson.nyc">Portfolio</a></li>
-            <li><a href="https://www.linkedin.com/in/david-anderson-7bb543101/">LinkedIn</a></li>
-            <li><a href="http://github.com/dlande000">GitHub</a></li>
-            <li><a href="mailto:dlande000@gmail.com">Email</a></li>
+            <li>
+              <a href="https://http://davidanderson.nyc">Portfolio</a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/in/david-anderson-7bb543101/">LinkedIn</a>
+            </li>
+            <li>
+              <a href="http://github.com/dlande000">GitHub</a>
+            </li>
+            <li>
+              <a href="mailto:dlande000@gmail.com">Email</a>
+            </li>
           </ul>
         </div>
       </footer>

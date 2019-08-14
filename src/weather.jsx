@@ -45,7 +45,13 @@ export default class Weather extends React.Component {
         let tenDayForecast = result.list.slice(0, 10);
         let formattedForecasts = tenDayForecast.map((obj, i) => {
           return(
-            <Forecast key={i} time={obj.dt_txt} fahrenheit={Math.round(obj.main.temp)} description={obj.weather[0].main} icon={`http://openweathermap.org/img/w/${obj.weather[0].icon}.png`}/>
+            <Forecast
+              key={i}
+              time={obj.dt_txt}
+              fahrenheit={Math.round(obj.main.temp)}
+              description={obj.weather[0].main}
+              icon={`http://openweathermap.org/img/w/${obj.weather[0].icon}.png`}
+            />
           );
         });
       this.setState({forecasts: formattedForecasts});

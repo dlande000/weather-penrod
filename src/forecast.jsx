@@ -12,8 +12,8 @@ export default class Forecast extends React.Component {
   timeStringToArray(time) {
     let timeElements = [];
     const checkingChars = [" ", "-", ":"];
-
     let newTime = "";
+
     for (let i = 0; timeElements.length < 5; i++) {
       if (!checkingChars.includes(this.props.time[i])) {
         newTime += this.props.time[i];
@@ -22,6 +22,7 @@ export default class Forecast extends React.Component {
         newTime = "";
       }
     }
+    
     return timeElements;
   }
 

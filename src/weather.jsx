@@ -55,7 +55,7 @@ export default class Weather extends React.Component {
           );
         });
       this.setState({forecasts: formattedForecasts});
-      });
+      })
   }
 
   componentDidMount() {

@@ -12,16 +12,17 @@ const locations = [
 
 let date = DateTime.local().toLocaleString(DateTime.DATETIME_HUGE);
 
-function formatWeather(locations) {
+const formatWeather = locations => {
   let formattedWeather = locations.map((location, i) => {
     return(
       <Weather location={location} key={location}/>
     )
   });
-  return formattedWeather;
-}
 
-function Root() {
+  return formattedWeather;
+};
+
+const Root = () => {
   return(
     <div className="slds-brand-band slds-brand-band_medium">
       <div className="full-app">
@@ -62,7 +63,7 @@ function Root() {
       </div>
     </div>
   )
-}
+};
 
 document.addEventListener("DOMContentLoaded", () => {
 	const root = document.getElementById("root");

@@ -2,8 +2,6 @@
 
 ### Background
 
-[Weather Penrod Live](http://www.davidanderson.nyc/weather-penrod)
-
 ![screenshot](./assets/images/screenshot.png)
 
 Weather Penrod displays the weather for the cities in which Penrod has offices: Milwaukee, Minneapolis, Chicago, and Dallas. 

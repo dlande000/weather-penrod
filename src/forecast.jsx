@@ -37,7 +37,7 @@ export default class Forecast extends React.Component {
   }
 
   render() {
-    if (this.state.formattedDate === null) return(<div></div>);
+    if (this.state.formattedDate === null) return (<div></div>);
     return(
       <div className="slds-col">
         <p>{this.state.formattedDate}</p>

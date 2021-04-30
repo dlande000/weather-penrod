@@ -16,6 +16,7 @@ export default class Weather extends React.Component {
       cloudiness: 0,
       forecasts: null
     };
+    
     this.capitalizeFirstLetter = this.capitalizeFirstLetter.bind(this);
   }
 

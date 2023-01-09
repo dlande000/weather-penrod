@@ -18,7 +18,7 @@
     "@salesforce/design-system-react": "^0.10.4",
     "babel-loader": "^8.0.6",
     "lodash": "^4.17.14",
-    "luxon": "^1.16.0",
+    "luxon": "^2.5.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "webpack": "^4.33.0",
